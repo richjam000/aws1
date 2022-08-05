@@ -10,6 +10,12 @@ variable "instance_type" {
 
 variable "instance_name" {
   description = "EC2 instance name"
-  default     = "Provisioned by Terraform"
+  default     = "rjam1"
 }
 
+variable "instance_ami" {
+  description = "AMI ID"
+  default           = "ami-08095fbc7037048f3"
+}
+
+/*CentOS 8 (x86_64) - with Updates HVM ami-08095fbc7037048f3*/
