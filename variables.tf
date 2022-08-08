@@ -5,12 +5,12 @@ variable "region" {
 
 variable "instance_type" {
   description = "Type of an EC2 instance to provision"
-  default     = "t2.nano"
+  default     = "t2.micro"
 }
 
 variable "instance_name" {
   description = "EC2 instance name"
-  default     = "rjam1"
+  default     = "richjam"
 }
 
 variable "instance_ami" {

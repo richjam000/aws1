@@ -2,6 +2,7 @@ provider "aws" {
   region = var.region
 }
 
+
 terraform {
   backend "s3" {
     # Replace this with your bucket name!
@@ -13,9 +14,11 @@ terraform {
   }
 }
 
-resource "aws_instance" "rjam1" {
+
+resource "aws_instance" "richjam1" {
   ami           = var.instance_ami
   instance_type = var.instance_type
+  key_name = "aws_key_richjam"
 
   tags = {
     Name = var.instance_name
@@ -29,6 +32,7 @@ resource "aws_kms_key" "jam-state-key" {
 
 resource "aws_s3_bucket" "richjam-terraform-state" {
   bucket = "richjam-terraform-state"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "terraform-state-enc" {
